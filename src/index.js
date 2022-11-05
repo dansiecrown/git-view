@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
-import { ErrorBoundary } from './components/ErrorBoundary';
+import { MyErrorBoundary } from './components/MyErrorBoundary';
 import FallbackPage from './components/FallbackPage';
 import './index.css';
 import App from './App';
@@ -11,9 +11,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 
   <BrowserRouter>
-    <ErrorBoundary >
+    <MyErrorBoundary >
       <App />
-    </ErrorBoundary>
+    </MyErrorBoundary>
   </BrowserRouter>
 );
 
