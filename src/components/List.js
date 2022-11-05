@@ -5,6 +5,7 @@ import axios from 'axios';
 import { Outlet } from 'react-router-dom';
 
 export default function List() {
+    const [temp, setTemp] = useState("");
 
 
     const [list, setList] = useState([]); // list is the state variable, setList is the function to update the state variable
@@ -26,17 +27,41 @@ export default function List() {
 
     useEffect(() => {
         fetchData()
-    }, [page])
+    }, [page, user])
 
 
     const changePage = (x) => {
 
         setPage(x)
     }
+
+    const changeHandle = (e) => {
+        setTemp(e.target.value)
+    }
+
+    const selectUser = () => {
+        if (temp === "") {
+            setUser("dansiecrown")
+        } else {
+
+            setUser(temp)
+
+        }
+    }
+
     return (
         <div className="list">
             <div className="container">
-                <ListItem list={list} page={page} isLoading={isLoading} className="column" onChange={changePage} />
+                <ListItem
+                    list={list}
+                    page={page}
+                    isLoading={isLoading}
+                    className="column"
+                    onChange={changePage}
+                    changeHandle={changeHandle}
+                    selectUser={selectUser}
+                    user={user}
+                />
             </div>
 
         </div>

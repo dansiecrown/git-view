@@ -1,4 +1,30 @@
+.nav{
+  padding: 1.5em;
+  color: black;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: space-between;
+}
+.nav h3{
+  margin: 0;
+}
 
+.menu{
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
+.menu a{
+  text-decoration: none;
+  color: black;
+
+}
+
+.menu a:hover{
+  color: orange;
+  background-color: none;
+}
 
 .home{
   height: 100vh;
@@ -127,11 +153,52 @@
   border-radius: 5px;
 }
 
-a:hover{
+.list a:hover{
   background-color: orange;
   color: black;
 
 }
+
+.user{
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  margin: 40px auto;
+
+}
+
+.user h1{
+  width: 20%;
+  font-size: 1.5rem;
+}
+
+.user div{
+  margin: auto ;
+  width: 70%;
+}
+
+.user input{
+  padding: 10px;
+  width: 80%;
+  margin: 10px;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+.user button{
+  padding: 10px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.user button:hover{
+  background-color: orange;
+  color: black;
+}
+
 
 
 /* Repo page styling */
@@ -197,6 +264,39 @@ a:hover{
 
 
 
+
+
+.not-found{
+  height: 80vh;
+  display: flex;
+  width: 100%;
+}
+
+.not-found__content {  
+  width: 70%;
+  margin: auto;
+  text-align: center;
+
+}
+
+.not-found h1{
+  font-size: 20rem;
+  font-weight: 600;
+  margin: 0;
+  padding: 0; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (max-width: 768px) {
  .home h1, .item-item h1{
   font-size: 1.5rem;
@@ -245,6 +345,52 @@ a:hover{
     display: inline-block;
     margin-top: 20px;
     text-decoration: none;
+  }
+  .not-found h1{
+    font-size: 10rem;
+    font-weight: 600;
+    margin: 0;
+    padding: 0; 
+  }
+
+  .user{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 60%;
+    margin: 40px auto;
+
+  
+  }
+  
+  .user h1{
+    text-align: center;
+    width: 100%;
+    font-size: 1.5rem;
+  }
+  
+  .user div{
+    margin: auto ;
+    width: 70%;
+  }
+  
+  .user input{
+    padding: 10px;
+    width: 80%;
+    margin: 0px;
+    margin-bottom: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+  }
+  
+  .user button{
+    width: 80%;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
   }
   
 }

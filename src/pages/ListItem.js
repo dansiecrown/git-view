@@ -1,18 +1,20 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useView, useViewUpdate } from '../ViewContext';
+import { useViewUpdate } from '../ViewContext';
 import Spinner from "../components/Spinner"
 
 
-export default function ListItem({ list, onChange, page, isLoading }) {
+export default function ListItem({ list, onChange, page, isLoading, changeHandle, selectUser, user }) {
     const navigate = useNavigate();
     const updateView = useViewUpdate();
+
+
 
     let repos = []
 
     const selected = (item) => {
         updateView(item)
-        navigate(`/${item.id}`)
+        navigate(`/list/${item.id}`)
         console.log(item)
     }
 
@@ -34,10 +36,21 @@ export default function ListItem({ list, onChange, page, isLoading }) {
     })
 
 
+
+
     return (
         <div>
+            <div className="user">
+                <h1>{user}</h1>
+                <div className="select-user">
+                    <input placeholder="Enter your github UserName" onChange={(e) => changeHandle(e)} />
+                    <button onClick={() => selectUser()} >Select User</button>
+                </div>
+            </div>
 
-            <h1>Repositories</h1>
+
+
+            {isLoading ? <Spinner /> : repos}
 
             <div className="numbers">
                 <button onClick={() => onChange(page + 1)} disabled={page === 1 ? true : false}>previous</button>
@@ -48,11 +61,7 @@ export default function ListItem({ list, onChange, page, isLoading }) {
                 <button onClick={() => onChange(page + 1)} disabled={page === 4 ? true : false}>Next</button>
                 <Link to="/" className="btn-home">Home</Link>
             </div>
-
-            {isLoading ? <Spinner /> : repos}
-
-
-        </div>
+        </div >
 
     )
 }
