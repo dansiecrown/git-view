@@ -13,13 +13,15 @@ export default function List() {
     const [page, setPage] = useState(1); // Page state
     const [user, setUser] = useState('dansiecrown'); // User state
 
-
     async function fetchData() {
         try {
             setIsLoading(true)
-            const response = await axios.get(`https://api.github.com/users/${user}/repos?page=${page}&per_page=6`);
+            const response = await axios.get(`https://api.github.com/users/${user}/repos?page=${page}&per_page=100`);
             setList(response.data)
             setIsLoading(false)
+            if (response.data.length === 0) {
+                setPage(1)
+            }
         } catch (error) {
             console.error(error);
         }
@@ -61,6 +63,7 @@ export default function List() {
                     changeHandle={changeHandle}
                     selectUser={selectUser}
                     user={user}
+
                 />
             </div>
 

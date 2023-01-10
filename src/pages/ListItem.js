@@ -1,12 +1,21 @@
 import React from 'react';
+import { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import { useViewUpdate } from '../ViewContext';
 import Spinner from "../components/Spinner"
 
 
-export default function ListItem({ list, onChange, page, isLoading, changeHandle, selectUser, user }) {
+export default function ListItem({ list, onChange, page, isLoading, changeHandle, selectUser, user, repoList }) {
+
+
     const navigate = useNavigate();
     const updateView = useViewUpdate();
+
+
+
+
+
+
 
 
 
@@ -53,12 +62,14 @@ export default function ListItem({ list, onChange, page, isLoading, changeHandle
             {isLoading ? <Spinner /> : repos}
 
             <div className="numbers">
-                <button onClick={() => onChange(page + 1)} disabled={page === 1 ? true : false}>previous</button>
-                <button onClick={() => onChange(1)} disabled={page === 1 ? true : false}>1</button>
-                <button onClick={() => onChange(2)} disabled={page === 2 ? true : false}>2</button>
-                <button onClick={() => onChange(3)} disabled={page === 3 ? true : false}>3</button>
-                <button onClick={() => onChange(4)} disabled={page === 4 ? true : false}>4</button>
-                <button onClick={() => onChange(page + 1)} disabled={page === 4 ? true : false}>Next</button>
+                <button onClick={() => onChange(page - 1)} disabled={page === 1 ? true : false}>Previous</button>
+                {page === 1 ? null : <button onClick={() => onChange(1)} disabled={page === 1 ? true : false} >1</button>}
+                <button onClick={() => onChange(page)} disabled={true}>{page}</button>
+                <button onClick={() => onChange(page + 1)} >{page + 1}</button>
+                <button onClick={() => onChange(page + 2)} >{page + 2}</button>
+                <button onClick={() => onChange(page + 3)} >{page + 3}</button>
+                <button onClick={() => onChange(page + 4)} >{page + 4}</button>
+                <button onClick={() => onChange(page + 1)} >Next</button>
                 <Link to="/" className="btn-home">Home</Link>
             </div>
         </div >
