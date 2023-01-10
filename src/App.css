@@ -1,55 +1,63 @@
-.nav{
+.nav {
   padding: 1.5em;
   color: black;
   background-color: #f5f5f5;
   display: flex;
   justify-content: space-between;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
-.nav h3{
+
+.nav h3 {
   margin: 0;
 }
 
-.menu{
+.menu {
   display: flex;
   justify-content: center;
   gap: 1em;
 }
 
-.menu a{
+.menu a {
   text-decoration: none;
   color: black;
 
 }
 
-.menu a:hover{
+.menu a:hover {
   color: orange;
   background-color: none;
 }
 
-.home{
+.home {
+  padding-top: 50px;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   width: 100%;
 }
 
-.home .container {  
+.home .container {
   width: 70%;
   margin: auto;
   text-align: center;
 
 }
 
-.home h1{
+.home h1 {
   font-size: 3rem;
   font-weight: 600;
   margin: 0;
-  padding: 0; 
+  padding: 0;
 }
-.home p{
+
+.home p {
   margin-bottom: 50px;
 }
 
-.btn{
+.btn {
   text-decoration: none;
   background-color: black;
   color: white;
@@ -63,7 +71,7 @@
   transition: all 0.3s ease;
 }
 
-.btn:hover{
+.btn:hover {
   background-color: orange;
   color: black;
 }
@@ -76,27 +84,27 @@
   text-align: center;
 }
 
-.list *{
+.list * {
   box-sizing: border-box;
 }
 
-.repo{
+.repo {
   width: 100%;
-  margin:auto;
-  background-color:rgba(163, 163, 163, 0.11);
+  margin: auto;
+  background-color: rgba(163, 163, 163, 0.11);
   margin: 10px;
   padding: 1em;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.103);
   border-radius: 5px;
 }
 
-.repo:hover{
+.repo:hover {
   background-color: black;
   color: white;
   cursor: pointer;
 }
 
-.row{
+.row {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -105,25 +113,25 @@
 
 
 
-.row *{
+.row * {
   padding: 10px;
   margin: auto 0;
 }
 
-.row a{
+.row a {
   margin-left: auto;
 }
 
-.contain{
+.contain {
   display: flex;
   height: 100%;
 }
 
-.contain div{
+.contain div {
   margin: auto;
 }
 
-.numbers{
+.numbers {
   margin-bottom: 50px;
 }
 
@@ -134,18 +142,18 @@
   border: none;
 }
 
-.numbers button:hover{
+.numbers button:hover {
   background-color: black;
   color: white;
   cursor: pointer;
 }
 
-.numbers button:disabled{
+.numbers button:disabled {
   color: white;
   background-color: black;
 }
 
-.list a{
+.list a {
   text-decoration: none;
   color: white;
   background-color: black;
@@ -153,13 +161,13 @@
   border-radius: 5px;
 }
 
-.list a:hover{
+.list a:hover {
   background-color: orange;
   color: black;
 
 }
 
-.user{
+.user {
   display: flex;
   justify-content: space-between;
   width: 90%;
@@ -167,17 +175,18 @@
 
 }
 
-.user h1{
+.user h1 {
   width: 20%;
   font-size: 1.5rem;
+  margin: auto;
 }
 
-.user div{
-  margin: auto ;
+.user div {
+  margin: auto;
   width: 70%;
 }
 
-.user input{
+.user input {
   padding: 10px;
   width: 60%;
   margin: 10px;
@@ -185,7 +194,7 @@
   border-radius: 5px;
 }
 
-.user button{
+.user button {
   padding: 10px;
   background-color: black;
   color: white;
@@ -194,7 +203,7 @@
   cursor: pointer;
 }
 
-.user button:hover{
+.user button:hover {
   background-color: orange;
   color: black;
 }
@@ -203,13 +212,13 @@
 
 /* Repo page styling */
 
-.item{
+.item {
   height: 100vh;
   display: flex;
   flex-direction: row;
 }
 
-.item .contain{
+.item .contain {
   width: 70%;
   height: auto;
   margin: auto;
@@ -218,27 +227,28 @@
   flex-direction: column;
 }
 
-.item-item{
+.item-item {
   width: 50%;
-  background-color:rgba(163, 163, 163, 0.329);
+  background-color: rgba(163, 163, 163, 0.329);
   height: 200px;
   padding: 4em;
 }
 
-.contain h1{
+.contain h1 {
   font-size: 3em;
   margin: auto;
 }
 
-.title, .last-title{
+.title,
+.last-title {
   font-weight: bold;
 }
 
-.last-title{
+.last-title {
   margin-bottom: 20px;
 }
 
-.home-btn{
+.home-btn {
   width: 70%;
   margin: auto;
   margin-top: 50px;
@@ -248,13 +258,13 @@
   text-decoration: none;
 }
 
-.home-btn:hover{
+.home-btn:hover {
   background-color: black;
   color: white;
   padding: 1em;
 }
 
-.git-btn{
+.git-btn {
   width: 50%;
   margin: auto;
   margin-top: 50px;
@@ -266,24 +276,24 @@
 
 
 
-.not-found{
+.not-found {
   height: 80vh;
   display: flex;
   width: 100%;
 }
 
-.not-found__content {  
+.not-found__content {
   width: 70%;
   margin: auto;
   text-align: center;
 
 }
 
-.not-found h1{
+.not-found h1 {
   font-size: 20rem;
   font-weight: 600;
   margin: 0;
-  padding: 0; 
+  padding: 0;
 }
 
 
@@ -298,14 +308,17 @@
 
 
 @media screen and (max-width: 768px) {
- .home h1, .item-item h1{
-  font-size: 1.5rem;
-  text-align: left;
 
- }
- .home .container {
+  .home h1,
+  .item-item h1 {
+    font-size: 1.5rem;
+    text-align: left;
+
+  }
+
+  .home .container {
     width: 90%;
-    margin:auto;
+    margin: auto;
     text-align: left;
   }
 
@@ -314,29 +327,29 @@
     margin: auto;
     text-align: center;
   }
-  
-  .view{
+
+  .view {
     height: 100vh;
     display: flex;
   }
-  
-  .view .container{
+
+  .view .container {
     width: 70%;
     margin: auto;
     text-align: center;
   }
 
-  .item-item{
+  .item-item {
     height: auto;
   }
 
-  .item-item h1{
+  .item-item h1 {
     font-size: 1.5rem;
     text-align: center;
-  
-   }
 
-  .git-btn{
+  }
+
+  .git-btn {
     width: 70%;
     padding: 1em;
     background-color: black;
@@ -346,45 +359,47 @@
     margin-top: 20px;
     text-decoration: none;
   }
-  .not-found h1{
+
+  .not-found h1 {
     font-size: 10rem;
     font-weight: 600;
     margin: 0;
-    padding: 0; 
+    padding: 0;
   }
 
-  .user{
+  .user {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 60%;
     margin: 40px auto;
 
-  
+
   }
-  
-  .user h1{
+
+  .user h1 {
     text-align: center;
     width: 100%;
     font-size: 1.5rem;
+    margin-bottom: 10px;
   }
-  
-  .user div{
-    margin: auto ;
+
+  .user div {
+    margin: auto;
     width: 70%;
   }
-  
-  .user input{
+
+  .user input {
     padding: 10px;
-    width: 80%;
+    width: 100%;
     margin: 0px;
     margin-bottom: 10px;
     border: 1px solid gray;
     border-radius: 5px;
   }
-  
-  .user button{
-    width: 80%;
+
+  .user button {
+    width: 100%;
     padding: 10px;
     background-color: black;
     color: white;
@@ -392,7 +407,5 @@
     border-radius: 5px;
     cursor: pointer;
   }
-  
-}
-  
 
+}

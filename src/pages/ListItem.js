@@ -11,14 +11,6 @@ export default function ListItem({ list, onChange, page, isLoading, changeHandle
     const navigate = useNavigate();
     const updateView = useViewUpdate();
 
-
-
-
-
-
-
-
-
     let repos = []
 
     const selected = (item) => {
@@ -33,7 +25,6 @@ export default function ListItem({ list, onChange, page, isLoading, changeHandle
                 <div className="contain">
                     <div className="row">
                         <h3>{item.name}</h3>
-
                         <a target="_blank" rel="noreferrer" onClick={() => {
                             selected(item)
                             updateView(item)
@@ -57,8 +48,6 @@ export default function ListItem({ list, onChange, page, isLoading, changeHandle
                 </div>
             </div>
 
-
-
             {isLoading ? <Spinner /> : repos}
 
             <div className="numbers">
@@ -73,6 +62,5 @@ export default function ListItem({ list, onChange, page, isLoading, changeHandle
                 <Link to="/" className="btn-home">Home</Link>
             </div>
         </div >
-
     )
 }
